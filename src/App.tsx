@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div>
-        <a href="index.html" target="_blank">
+        <a href="Projects.tsx" target="_blank">
           <img src={botLogo} className="logo react" alt="React logo" />
         </a>
       </div>
