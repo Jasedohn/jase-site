@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://react.dev" target="_blank">
+        <a href="index.html" target="_blank">
           <img src={botLogo} className="logo react" alt="React logo" />
         </a>
       </div>
@@ -18,11 +18,11 @@ function App() {
           count is {count}
         </button>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          Hello what are you doing here? This is a personal website for Jase Dohn.
         </p>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        In development...
       </p>
     </>
   )
