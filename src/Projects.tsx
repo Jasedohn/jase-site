@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import homeLogo from './assets/home.png';
 
 const Projects: React.FC = () => {
   return (
@@ -9,6 +10,11 @@ const Projects: React.FC = () => {
           path="/"
           element={
             <>
+            <div>
+              <Link to ="/">
+                <img src={homeLogo} className="logo react" alt="Home logo" />
+              </Link>
+            </div>
               <div>
                 <h2>Projects</h2>
               </div>
