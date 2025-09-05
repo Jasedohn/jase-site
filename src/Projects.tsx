@@ -12,7 +12,10 @@ const Projects: React.FC = () => {
         </Link>
       </div>
       <div>
-        <h2>Projects</h2>
+        <h2>Discord Bot Project</h2>
+      </div>
+      <div>
+        <p>This Project is for adding a discord bot to my server - going to look into AI chat bot integration</p>
       </div>
     </>
   );
