@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import homeLogo from './assets/home.png';
+import homeLogo from './assets/25694.png';
 
 const Projects: React.FC = () => {
   return (
