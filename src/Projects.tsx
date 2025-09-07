@@ -7,7 +7,7 @@ const Projects: React.FC = () => {
   const [pokemonNames, setPokemonNames] = useState<string[]>([]);
 
   useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
       .then(res => res.json())
       .then(data => setPokemonNames(data.results.map((p: { name: string }) => p.name)));
   }, []);
@@ -26,8 +26,6 @@ const Projects: React.FC = () => {
         <p>This is going to give a list of pokemon that is searchable</p>
       </div>
       <ul>
-        <li>Fetch data from the PokeAPI</li>
-        <li>Display a list of Pokemon names</li>
         {pokemonNames.map((name: string) => <li key={name}>{name}</li>)}
       </ul>
     </>
