@@ -5,11 +5,13 @@ import homeLogo from './assets/25694.png';
 
 const Projects: React.FC = () => {
   const [pokemonNames, setPokemonNames] = useState<string[]>([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
       .then(res => res.json())
-      .then(data => setPokemonNames(data.results.map((p: { name: string }) => p.name)));
+      .then(data => setPokemonNames(data.results.map((p: { name: string }) => p.name)))
+      .catch(err => setError(err));
   }, []);
 
   return (
@@ -27,6 +29,7 @@ const Projects: React.FC = () => {
       </div>
       <ul>
         {pokemonNames.map((name: string) => <li key={name}>{name}</li>)}
+        {error && <li>Error fetching data</li>}
       </ul>
     </>
   );
