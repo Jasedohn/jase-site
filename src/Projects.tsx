@@ -16,6 +16,10 @@ const Projects: React.FC = () => {
       .catch(err => setError(err));
   }, []);
 
+  const filteredNames = pokemonNames.filter(name =>
+    name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <>
       <div>
@@ -29,13 +33,15 @@ const Projects: React.FC = () => {
       <div>
         <p>This is going to give a list of pokemon that is searchable</p>
       </div>
-      <ul>
-        <SearchBar onSearch={setSearchQuery} placeholder="Search Pokémon..." />
-        {pokemonNames
-          .filter(name => name.toLowerCase().includes(searchQuery.toLowerCase()))
-          .map((name: string) => <li key={name}>{name}</li>)}
-        {error && <li>Error fetching data</li>}
-      </ul>
+      <SearchBar onSearch={setSearchQuery} placeholder="Search Pokémon..." />
+      {error && <div>Error fetching data</div>}
+      {filteredNames.length === 0 && !error ? (
+        <div>No Pokémon found.</div>
+      ) : (
+        <ul>
+          {filteredNames.map((name: string) => <li key={name}>{name}</li>)}
+        </ul>
+      )}
     </>
   );
 };
