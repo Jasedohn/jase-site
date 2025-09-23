@@ -10,7 +10,7 @@ const Projects: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=400')
       .then(res => res.json())
       .then(data => setPokemonNames(data.results.map((p: { name: string }) => p.name)))
       .catch(err => setError(err));
