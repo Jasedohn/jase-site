@@ -38,9 +38,13 @@ const Projects: React.FC = () => {
       {filteredNames.length === 0 && !error ? (
         <div>No Pokémon found.</div>
       ) : (
-        <ul>
-          {filteredNames.map((name: string) => <li key={name}>{name}</li>)}
-        </ul>
+          <ul>
+              {filteredNames.map((name: string) => (
+                  <li key={name}>
+                      <a href={`/your-path/${encodeURIComponent(name)}`}>{name}</a>
+                  </li>
+              ))}
+          </ul>
       )}
     </>
   );
