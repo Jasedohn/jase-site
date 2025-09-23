@@ -44,7 +44,7 @@ const Projects: React.FC = () => {
                   return (
                       <li key={name}>
                           <a
-                              href={`https://api.example.com/image/${number}`}
+                              href={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${number}.png`}
                               target="_blank"
                               rel="noopener noreferrer"
                           >
