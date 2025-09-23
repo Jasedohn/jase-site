@@ -39,12 +39,22 @@ const Projects: React.FC = () => {
         <div>No Pokémon found.</div>
       ) : (
           <ul>
-              {filteredNames.map((name: string) => (
-                  <li key={name}>
-                      <a href={`/your-path/${encodeURIComponent(name)}`}>{name}</a>
-                  </li>
-              ))}
+              {filteredNames.map((name: string, index: number) => {
+                  const number = index + 1; // Start counting from 1
+                  return (
+                      <li key={name}>
+                          <a
+                              href={`https://api.example.com/image/${number}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                          >
+                              {number}. {name}
+                          </a>
+                      </li>
+                  );
+              })}
           </ul>
+
       )}
     </>
   );
